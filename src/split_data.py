@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 
-# Converting the .csv file to a pandas DataFrame.
+# Converting the .csv file (pre-categorised transaction data) to a pandas DataFrame.
 raw_data = pd.read_csv("data/raw_data.csv")
 # Removing unnecessary, sensitive columns.
 clean_data = raw_data.drop(columns=["Transaction Date", "Transaction Type", "Sort Code", "Account Number", "Balance"])

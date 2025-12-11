@@ -10,7 +10,7 @@ The file 'train.py' converts the labelled train and test .csv files into pandas 
 
 The file 'classify.py' uses the saved transaction-classification model to categorise a new .csv file inputted by the user. The confidence level is calculated for each prediction. Should the model's confidence dip below the threshold of 0.5, the user is asked to input the correct category for that transaction.
 
-The file 'visualise.py' provides the user with a range of options to visualise their categorised transaction data. This includes a bar chart of each category, a pie chart displaying the outgoing transactions and a pie chart displaying the incoming transactions.
+The file 'visualise.py' provides the user with a range of options to visualise their categorised transaction data. This includes a bar chart of each category, a pie chart displaying the outgoing transactions and a pie chart displaying the incoming transactions. Furthermore, a summary of these plots may be outputted as a pdf.
 
 
 ## User Guide
@@ -22,3 +22,8 @@ As previously stated, the user must first categorise some past transaction data 
 The program is designed to have a folder, labelled 'data', containing all the .csv files to read and analyse. As this is sensitive information, it is not included within the Github repository.
 
 Finally, all necessary libraries and their versions are contained within the 'requirements.txt' file.
+
+
+## Example Output
+
+![Example Output](Spending_Summary_2025-10-01_2025-11-28.png)

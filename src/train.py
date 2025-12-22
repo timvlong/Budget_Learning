@@ -53,4 +53,4 @@ print(classification_report(y_test, y_predicted))
 
 
 # Saving the transaction-classifier model for use on real data.
-joblib.dump((vectoriser, clf), "transaction_clf.joblib")
+joblib.dump((vectoriser, clf), "models/transaction_clf.joblib")

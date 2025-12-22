@@ -135,7 +135,7 @@ def download_summary(cat_sum, start, end):
     ax3.set_ylabel("")
     fig.suptitle("Summary of Spending from {} - {}.".format(start, end), weight='bold', fontsize=15)
     fig.tight_layout()
-    fig.savefig("Spending_Summary_{}_{}.pdf".format(start, end))
+    fig.savefig("examples/Spending_Summary_{}_{}.pdf".format(start, end))
 
 
 # Allowing the user to decide how they wish to visualise their data.

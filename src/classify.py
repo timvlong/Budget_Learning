@@ -5,7 +5,7 @@ from scipy.sparse import hstack
 
 
 # Loading our transaction-classifier model.
-vectoriser, clf = joblib.load("transaction_clf.joblib")
+vectoriser, clf = joblib.load("models/transaction_clf.joblib")
 
 
 # Converting the inputted .csv file (containing the uncategorised data) into a pandas DataFrame.
@@ -20,7 +20,7 @@ data["Amount"] = data["Credit Amount"] + data["Debit Amount"]
 
 
 # Scaling and centering our 'Amount' field according to the model fitted with the training data.
-scaler = joblib.load("scaler.joblib")
+scaler = joblib.load("models/scaler.joblib")
 data["Amount"] = scaler.transform(data[["Amount"]])
 
 
@@ -29,7 +29,7 @@ data["Amount"] = scaler.transform(data[["Amount"]])
 types = pd.get_dummies(data["Transaction Type"], drop_first=True, dtype=int)
 # This new data may not have every transaction type present.
 # Must therefore add any outstanding types.
-type_names = joblib.load("transaction_types.joblib")
+type_names = joblib.load("models/transaction_types.joblib")
 types = types.reindex(columns=type_names, fill_value=0)
 # Adding these dummies to the main dataframe.
 data = pd.concat([data, types], axis=1)

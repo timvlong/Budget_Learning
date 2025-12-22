@@ -31,7 +31,7 @@ types = pd.get_dummies(clean_data["Transaction Type"], drop_first=True, dtype=in
 # Adding these dummies to the main dataframe.
 clean_data = pd.concat([clean_data, types], axis=1)
 # Saving the possible transaction types.
-joblib.dump(types.columns.to_list(), "transaction_types.joblib")
+joblib.dump(types.columns.to_list(), "models/transaction_types.joblib")
 # Removing the now-redundant 'Transaction Type' field.
 clean_data = clean_data.drop(columns=["Transaction Type"])
 
@@ -57,4 +57,4 @@ test_data.to_csv("data/test_data.csv", index=False)
 
 
 # Saving the scaler to use on new data when classifying.
-joblib.dump(scaler, "scaler.joblib")
+joblib.dump(scaler, "models/scaler.joblib")

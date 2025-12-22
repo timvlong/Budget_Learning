@@ -9,7 +9,7 @@ import numpy as np
 
 
 # Importing our transaction classification model.
-vectoriser, clf = joblib.load("transaction_clf.joblib")
+vectoriser, clf = joblib.load("models/transaction_clf.joblib")
 
 
 # Converting the .csv file (categorised) to a pandas DataFrame.
